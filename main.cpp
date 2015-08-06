@@ -1,6 +1,7 @@
 #include <iostream>
+#include "ramInterpreter.h"
 
 int main(int argc, char **argv) {
-    std::cout << "Hello, world!" << std::endl;
+    RamInterpreter a("text.ram");
     return 0;
 }
