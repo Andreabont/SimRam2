@@ -9,19 +9,19 @@ struct instruction_t {
     std::string noun;
 };
 
-class RamInterpreter {
+class RamInstruction {
 
 private:
     std::vector<instruction_t> code;
     std::map<std::string, int> label;
-    std::vector<int> input;
-    std::vector<int> output;
-    std::map<int,int> registers;
-    int program_counter = 0;
+    int lineNumber;
 
 public:
 
-    RamInterpreter(std::string filename);
+    RamInstruction(std::string filename);
+    int getLineNumber();
+    int getLabelPosition(std::string name);
+    instruction_t getInstruction(int line);
 
 };
 

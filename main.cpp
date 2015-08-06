@@ -1,7 +1,7 @@
 #include <iostream>
-#include "ramInterpreter.h"
+#include "RamInstruction.h"
 
 int main(int argc, char **argv) {
-    RamInterpreter a("text.ram");
+    RamInstruction a("text.ram");
     return 0;
 }
