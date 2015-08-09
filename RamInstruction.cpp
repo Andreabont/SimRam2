@@ -15,7 +15,10 @@ RamInstruction::RamInstruction(std::string filename) {
     std::string line;
     
     while (std::getline(source_file, line)) {
-        
+
+    // Increment line number
+	this->lineNumber++;
+
 	// Remove all char after #
         line = line.substr(0, line.find('#'));
 
@@ -45,7 +48,6 @@ RamInstruction::RamInstruction(std::string filename) {
 
 	// Skip if empty line
 	if(line.empty()) {
-	   this->lineNumber++;
 	   continue;
 	}
 	
@@ -63,8 +65,6 @@ RamInstruction::RamInstruction(std::string filename) {
         instruction.noun = temp[1];
 
         this->code.push_back(instruction);
-
-        this->lineNumber++;
 
     }
 
